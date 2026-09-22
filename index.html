@@ -1,188 +1,273 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site d'information de la CGT ABB France">
+  <title>CGT ABB France | Information des salariés</title>
 
-<title>CGT ABB France</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-* {
-    box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #222222;
+      line-height: 1.6;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    color: #222222;
-    line-height: 1.6;
-}
+    /* EN-TETE */
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 25px;
-}
+    header {
+      background: #b91c1c;
+      color: white;
+      padding: 18px 0;
+    }
 
-/* EN-TETE */
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-header {
-    background-color: #b91c1c;
-    color: white;
-    padding: 20px 0;
-}
+    .brand {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-}
+    .brand-small {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #fee2e2;
+    }
 
-.logo {
-    font-size: 27px;
-    font-weight: bold;
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-.slogan {
-    font-size: 13px;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 20px;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-nav a:hover {
-    text-decoration: underline;
-}
+    /* ACCUEIL */
 
-/* ACCUEIL */
+    .hero {
+      background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+      color: white;
+      padding: 90px 0;
+    }
 
-.hero {
-    background-color: #991b1b;
-    color: white;
-    padding: 80px 0;
-}
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.30);
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-.hero h1 {
-    font-size: 52px;
-    line-height: 1.1;
-    margin: 0;
-}
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.05;
+      margin: 25px 0 10px;
+    }
 
-.hero h2 {
-    font-size: 32px;
-    color: #fee2e2;
-    margin-top: 12px;
-}
+    .hero h2 {
+      font-size: 35px;
+      margin: 0;
+      color: #fee2e2;
+    }
 
-.hero p {
-    font-size: 20px;
-    max-width: 720px;
-    margin-top: 25px;
-}
+    .hero p {
+      max-width: 720px;
+      font-size: 20px;
+      margin-top: 25px;
+    }
 
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 10px;
-    padding: 14px 22px;
-    background-color: white;
-    color: #b91c1c;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-}
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-/* SECTIONS */
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-section {
-    padding: 65px 0;
-}
+    .btn-white {
+      background: white;
+      color: #b91c1c;
+    }
 
-.section-title {
-    color: #b91c1c;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-}
+    .btn-border {
+      color: white;
+      border: 1px solid white;
+    }
 
-h2 {
-    font-size: 36px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
+    /* SECTIONS */
 
-.intro {
-    color: #555555;
-    font-size: 17px;
-    max-width: 760px;
-}
+    section {
+      padding: 65px 0;
+    }
 
-/* CARTES */
+    .label {
+      color: #b91c1c;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 35px;
-}
+    .section-heading {
+      font-size: 38px;
+      line-height: 1.2;
+      margin: 6px 0 15px;
+    }
 
-.card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 28px;
-    border: 1px solid #dddddd;
-}
+    .intro {
+      max-width: 750px;
+      color: #555555;
+      font-size: 17px;
+    }
 
-.card-icon {
-    font-size: 34px;
-}
+    /* CARTES */
 
-.card h3 {
-    font-size: 21px;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
 
-.card p {
-    color: #555555;
-}
+    .card {
+      background: white;
+      border: 1px solid #dddddd;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
 
-/* CALENDRIER */
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fef2f2;
+      border-radius: 12px;
+      font-size: 28px;
+    }
 
-.calendar {
-    background-color: white;
-}
+    .card h3 {
+      margin: 18px 0 8px;
+      font-size: 21px;
+    }
 
-.event {
-    background-color: #f9f9f9;
-    border-left: 6px solid #b91c1c;
-    margin-top: 20px;
-    padding: 22px;
-    border-radius: 6px;
-}
+    .card p {
+      margin: 0;
+      color: #555555;
+    }
 
-.event-date {
-    font-size: 20px;
-    font-weight: bold;
-}
+    /* CALENDRIER */
 
-.event-time {
-    color: #b91c1c;
-    font-weight: bold;
-}
+    .calendar {
+      background: white;
+    }
 
-/* ACTUALITES */
+    .event {
+      margin-top: 20px;
+      background: #fafafa;
+      border: 1px solid #dddddd;
+      border-left: 6px solid #b91c1c;
+      border-radius: 10px;
+      padding: 24px;
+    }
 
-.actualites {
-    background-color: #18181b;
-    color: white;
-}
+    .event-date {
+      color: #b91c1c;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .event-time {
+      font-weight: bold;
+      margin-top: 3px;
+    }
+
+    .event h3 {
+      margin-bottom: 5px;
+    }
+
+    .event p {
+      color: #555555;
+      margin: 0;
+    }
+
+    /* ACTUALITES */
+
+    .news {
+      background: #18181b;
+      color: white;
+    }
+
+    .news .label {
+      color: #f87171;
+    }
+
+    .news .intro {
+      color: #d4d4d8;
+    }
+
+    .news-box {
+      margin-top: 30px;
+      padding: 28px;
+      border: 1px solid #52525b;
+      border-radius: 14px;
+      background: #27272a;
+    }
+
+    .news-box h3 {
+      margin-top: 0;
+      font-size: 23px;
+    }
+
+    .news-box p {
+      color: #d4d4d8;
+      margin-bottom: 0;
+    }
+
+    /* DOCUMENTS */
+
+    .document {
+      margin-top: 28px;
+      background: white;
+      border: 1px
